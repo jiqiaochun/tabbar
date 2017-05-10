@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "JYTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    // 创建根控制器(JYTabBarController)
+    JYTabBarController *mainVc = [[JYTabBarController alloc] init];
+
+    [self.window setRootViewController:mainVc];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
